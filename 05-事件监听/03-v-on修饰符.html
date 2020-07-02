@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <!-- 1. .stop 修饰符的使用 -->
+  <div @click="divClick">
+    12334434
+    <button @click.stop="btnClick">按钮2</button>
+  </div>
+  <br>
+  <!-- 2. .prevent装饰符的使用 阻止默认的提交事件 -->
+  <form action="百度">
+    <input type="submit" value="提交" @click.prevent="submitClick">
+  </form>
+
+  <!-- 3. 监听某个键盘键帽的点击 -->
+  <input type="text" @keyup.enter="keyUp"/>
+
+  <!-- 4. once 触发一次 -->
+  <button @click.once="once">按钮4</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'template'
+    },
+    methods: {
+      divClick(){
+        console.log("divClick");
+      },
+      btnClick(){
+        console.log("btnClick");
+      },
+      submitClick(){
+        console.log("submitClick");
+      },
+      keyUp(){
+        console.log("keyUp");
+      },
+      once(){
+        console.log("once");
+      }
+    }
+  })
+</script>
+
+</body>
+</html>
