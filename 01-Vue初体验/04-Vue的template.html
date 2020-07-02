@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<!-- mustache 支持直接写变量 也支持简单的表达式 -->
+<div id="app">{{message + ' ' + message }}</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el : '#app',
+    data : {
+      message : 'template'
+    }
+  })
+</script>
+
+</body>
+</html>
