@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <ul>
+    <li v-for="item in letters">{{item}}</li>
+  </ul>
+  <button @click="btnClick">按钮</button>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el : '#app',
+    data : {
+      letters : ['F','B','C','D','E']
+    },
+    methods:{
+      btnClick(){
+        // 1.push方法
+        // this.letters.push('aaa');
+
+        // 2.pop 方法 删除最后一个元素
+        // this.letters.pop();
+
+        // 3.shift() 删除第一个元素
+        // this.letters.shift();
+
+        // 4.unshift() 在第一个元素前追加元素
+        // this.letters.unshift('aaa');
+
+        // 4.splice(start,end) 删除元素，插入元素 替换元素
+        // 删除元素 ：第二个参数传入删除几个元素，不传删除之后全部元素
+        // 替换元素 ：第二个参数表示需要替换几个元素，后面表示用于替换的前面的元素
+        // 插入元素 ： 第二个参数传入0 ，并且后面跟上需要追加的原色
+        // this.letters.splice(1,2,'f','d');
+
+        // 5.sort()
+        // this.letters.sort();
+
+        // 6.reverse()
+        // this.letters.reverse();
+
+        // 2.通过索引值修改数组中的元素,无法做到响应式
+        // this.letters[0] = 'vvv';
+        // this.letters.splice(0,1,'ccc');
+        //set(要修改的独享，索引值)
+        Vue.set(this.letters,0,'ddd');
+
+      }
+    }
+  })
+</script>
+
+</body>
+</html>
