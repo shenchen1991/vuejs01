@@ -6,13 +6,21 @@
 </head>
 <body>
 <div id="app">
-  <cpn v-show="isShow"></cpn>
+  <cpn></cpn>
+  <cpn>
+     <template slot-scope="slot">
+       <span v-for="item in slot.data">{{item}} - </span>
+     </template>
+  </cpn>
 </div>
 
 <template id="cpn">
   <div>
-    <h2>我是组件</h2>
-    <button v-show="isShow">测试</button>
+    <slot :data="pLanguages">
+      <ui>
+        <li v-for="item in pLanguages">{{item}}</li>
+      </ui>
+    </slot>
   </div>
 </template>
 <script src="../js/vue.js"></script>
@@ -20,15 +28,14 @@
   const app = new Vue({
     el: '#app',
     data: {
-      message: 'template',
-      isShow: true
+      message: 'template'
     },
     components: {
       cpn: {
         template: '#cpn',
         data() {
           return {
-            isShow: false
+            pLanguages: ['A', 'B', 'C', 'D']
           }
         }
       }
