@@ -10,5 +10,10 @@ console.log(age);
 console.log(name);
 
 // 3.依赖css文件
-// import css from './css/style.css'
-require('./css/style.css')
+import css from './css/style.css'
+// require('./css/style.css')
+
+// 4.依赖less文件
+require('./css/special.less')
+
+document.writeln('<h2>good boy</h2>')
