@@ -30,19 +30,33 @@ module.exports = {
             loader: 'url-loader',
             options: {
               // 当加载的图片，小于limit时，会将图片编译成base64字符串形式
-              limit: 48000
+              limit: 8192,
+              name:'img/[name].[hash:8].[ext]'
             }
           }
         ]
-      }, {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {}
+      },
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['es2015']
           }
-        ]
+        }
+      },
+      {
+        test:/\.vue/,
+        use:['vue-loader']
       }
     ]
+  },
+  resolve:{
+    extensions:['.js','.css','.vue'],
+    // alias:别名
+    alias:{
+      'vue$':'vue/dist/vue.esm.js'
+    }
   }
 }

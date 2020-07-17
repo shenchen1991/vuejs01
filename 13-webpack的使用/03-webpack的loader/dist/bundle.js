@@ -440,67 +440,60 @@ function toComment(sourceMap) {
 
 /***/ }),
 /* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__js_info__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_style_css__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__css_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__css_style_css__);
-// 1.common.js的模块化规范
-const {add,mul} = __webpack_require__(3)
 
-console.log(add(20,30));
+
+var _info = __webpack_require__(3);
+
+var _style = __webpack_require__(4);
+
+var _style2 = _interopRequireDefault(_style);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// 1.common.js的模块化规范
+var _require = __webpack_require__(8),
+    add = _require.add,
+    mul = _require.mul;
+
+console.log(add(20, 30));
 console.log(mul(20, 30));
 
 // 2.es6模块化规范
 
-console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["a" /* age */]);
-console.log(__WEBPACK_IMPORTED_MODULE_0__js_info__["b" /* name */]);
+console.log(_info.age);
+console.log(_info.name);
 
 // 3.依赖css文件
 
 // require('./css/style.css')
 
 // 4.依赖less文件
-__webpack_require__(9)
+__webpack_require__(9);
 
-document.writeln('<h2>good boy</h2>')
+document.writeln('<h2>good boy</h2>');
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function add(num1, num2) {
-  return num1 + num2;
-}
+"use strict";
 
-function mul(num1, num2) {
-  return num1 * num2;
-}
 
-module.exports = {
-  add, mul
-}
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var name = exports.name = 'chen';
+var age = exports.age = 18;
 
 /***/ }),
 /* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-const name = 'chen';
-/* harmony export (immutable) */ __webpack_exports__["b"] = name;
-
-const age = 18;
-/* harmony export (immutable) */ __webpack_exports__["a"] = age;
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var api = __webpack_require__(0);
-            var content = __webpack_require__(6);
+            var content = __webpack_require__(5);
 
             content = content.__esModule ? content.default : content;
 
@@ -520,13 +513,13 @@ var update = api(content, options);
 module.exports = content.locals || {};
 
 /***/ }),
-/* 6 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(1);
-var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(7);
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(8);
+var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(6);
+var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(7);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
@@ -536,7 +529,7 @@ module.exports = exports;
 
 
 /***/ }),
-/* 7 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -576,12 +569,31 @@ module.exports = function (url, options) {
 };
 
 /***/ }),
-/* 8 */
+/* 7 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony default export */ __webpack_exports__["default"] = ("data:image/jpeg;base64,ZXhwb3J0IGRlZmF1bHQgX193ZWJwYWNrX3B1YmxpY19wYXRoX18gKyAiNGQxZTI2NTEwNWI2ZTMwMTZiNWZmMDc5NzM0NWEzNWIuanBnIjs=");
+/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "img/hlw.4d1e2651.jpg");
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function add(num1, num2) {
+  return num1 + num2;
+}
+
+function mul(num1, num2) {
+  return num1 * num2;
+}
+
+module.exports = {
+  add: add, mul: mul
+};
 
 /***/ }),
 /* 9 */
