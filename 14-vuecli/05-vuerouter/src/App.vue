@@ -12,7 +12,10 @@
     <router-link to="/home">首页</router-link>
     <router-link to="/about">关于</router-link>
     <router-link v-bind:to="'/user/'+ userId">用户</router-link>
-    <!--    <img src="./assets/logo.png">-->
+    <router-link :to="{path:'/profile',query:{name:'why',age:18,sex:'男'}}">档案</router-link>
+
+    <button @click="userClick">用户</button>
+    <button @click="profileClick">档案</button>
     <router-view/>
   </div>
 </template>
@@ -23,12 +26,21 @@
     methods: {
       homeClick() {
         // this.$router.push('/home')
-
         this.$router.replace('/home')
-
       },
       aboutClick() {
         this.$router.push('/about')
+      },
+      userClick() {
+        this.$router.push('/user/' + this.userId)
+      },
+      profileClick() {
+        this.$router.push({
+          path: '/profile',
+          query: {
+            name: 'kobe'
+          }
+        })
       }
     },
     data() {
