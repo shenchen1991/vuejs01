@@ -1,8 +1,13 @@
 <template>
   <div id="app">
 
-    <h2>---------模块内容----------</h2>
+    <h2>---------子模块模块内容----------</h2>
     <h2>{{$store.state.a.name}}</h2>
+    <h2>{{$store.getters.fullName}}</h2>
+    <h2>{{$store.getters.fullName2}}</h2>
+    <h2>{{$store.getters.fullName3}}</h2>
+
+    <button @click="asyncUpdateName">异步操作</button>
 
     <h2>---------App内容：Info内容是否是响应式的----------</h2>
     <h2>{{$store.state.info}}</h2>
@@ -82,8 +87,12 @@
         this.$store.dispatch('aUpdateInfo', '我是Message').then(result => {
           console.log(result);
         })
-
+      },
+      asyncUpdateName() {
+        this.$store.dispatch('aAUpdateName')
       }
+
+
     },
     data() {
       return {
