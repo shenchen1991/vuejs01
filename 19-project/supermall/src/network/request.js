@@ -4,7 +4,7 @@ export function request(config) {
 
   // 1.创建axios的创建
   const instance = axios.create({
-    baseURL: 'https://httpbin.org/',
+    baseURL: 'https://image.baidu.com',
     timeout: 5000
   })
   // 2.axios的拦截器
